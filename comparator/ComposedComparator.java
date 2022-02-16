@@ -9,5 +9,13 @@ public class ComposedComparator implements Comparator<Song> {
         this.c2 = c2;
     }
 
+    public int compare(Song o1, Song o2) {
+        int compare_value = c1.compare(o1, o2);
+        if (compare_value == 0) {
+            compare_value = c2.compare(o1, o2);
+        }
+        return compare_value;
+    }
+
     // implement compare method
 }
